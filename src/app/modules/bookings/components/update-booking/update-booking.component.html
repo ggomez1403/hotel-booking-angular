@@ -1,0 +1,108 @@
+<section class="container">
+	<article class="booking-info">
+		<section class="detail">
+			<div class="detail-title">
+				<i class="fa-regular fa-calendar-days"></i>
+				<p>Step 1: Check details</p>
+			</div>
+			<div class="divider"></div>
+			<form [formGroup]="checkDatesForm" class="checks-container">
+				<div class="check">
+					<p>Check-in</p>
+					<input type="date" formControlName="checkIn" (change)="onCheckInChange($event)" />
+					<div *ngIf="checkIn?.touched && checkIn?.errors?.['required']" class="danger">
+						Check In Date is required
+					</div>
+				</div>
+				<div class="check">
+					<p>Check-out</p>
+					<input type="date" formControlName="checkOut" (change)="onCheckOutChange($event)" />
+					<div *ngIf="checkOut?.touched && checkOut?.errors?.['required']" class="danger">
+						Check Out Date is required
+					</div>
+				</div>
+			</form>
+		</section>
+		<section class="detail">
+			<div class="detail-title">
+				<i class="fa-solid fa-user"></i>
+				<p>Step 2: Your details</p>
+			</div>
+			<div class="divider"></div>
+			<article class="user-details">
+				<p class="detail-text">
+					First name: <span>{{ reservation.user.firstName }}</span>
+				</p>
+				<p class="detail-text">
+					Last name: <span>{{ reservation.user.lastName }}</span>
+				</p>
+				<p class="detail-text">
+					Email Address: <span>{{ reservation.user.email }}</span>
+				</p>
+				<p class="detail-text">
+					Phone Number: <span>{{ reservation.user.phoneNumber }}</span>
+				</p>
+			</article>
+		</section>
+		<section class="detail">
+			<div class="detail-title">
+				<i class="fa-solid fa-bed"></i>
+				<p>Step 3: Room details</p>
+			</div>
+			<div class="divider"></div>
+			<article class="room-details">
+				<p class="highlights-title">Room highlights</p>
+				<ul class="highlights">
+					<li *ngFor="let item of reservation.room.highlights">
+						<i class="fa-solid fa-circle-chevron-right"></i>
+						<span>{{ item }}</span>
+					</li>
+				</ul>
+			</article>
+		</section>
+		<button
+			routerLink="/bookings/my-bookings"
+			[disabled]="!checkDatesForm.valid"
+			class="btn"
+			(click)="submitReservationData()"
+		>
+			Update Reservation
+		</button>
+	</article>
+	<article class="main-info">
+		<img src="{{ reservation.room.imgUrl }}" alt="{{ reservation.room.name }}" />
+		<p class="title">{{ reservation.room.name }}</p>
+		<section class="info">
+			<article class="dates-container">
+				<div class="date">
+					<p>Check-in</p>
+					<p class="book-date">{{ checkInDate | date: 'EEEE, MMMM d, y' }}</p>
+				</div>
+				<div class="date">
+					<p>Check-out</p>
+					<p class="book-date">{{ checkOutDate | date: 'EEEE, MMMM d, y' }}</p>
+				</div>
+			</article>
+			<article class="price-container">
+				<div class="price">
+					<p>
+						Room Charges ({{ daysDifference }} {{ daysDifference === 1 ? 'day' : 'days' }} charges)
+					</p>
+					<p>{{ reservation.room.initialPrice * daysDifference | currency: 'USD' }}</p>
+				</div>
+				<div class="price">
+					<p>
+						Taxes and fees ({{ daysDifference }} {{ daysDifference === 1 ? 'day' : 'days' }} taxes
+						and fees)
+					</p>
+					<p>{{ reservation.room.taxesAndFees * daysDifference | currency: 'USD' }}</p>
+				</div>
+				<div class="divider"></div>
+				<div class="price">
+					<p class="price-total">Total to pay now</p>
+					<p class="total">{{ reservation.room.totalPrice * daysDifference | currency: 'USD' }}</p>
+				</div>
+			</article>
+		</section>
+	</article>
+</section>

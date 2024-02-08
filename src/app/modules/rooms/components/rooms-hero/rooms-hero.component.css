@@ -1,0 +1,31 @@
+.main-info {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 5rem;
+	background: url('https://i.imgur.com/PyKq0TZ.png') no-repeat center/cover;
+}
+
+h1,
+p,
+a {
+	color: #fff;
+}
+
+h1 {
+	font-size: 4rem;
+}
+
+p {
+	font-size: 1.5rem;
+	text-align: center;
+	max-width: 700px;
+}
+
+a {
+	border: 2px solid #fff;
+	border-radius: 30px;
+	padding: 2rem 1rem;
+}

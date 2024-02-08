@@ -1,0 +1,28 @@
+.container {
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5rem;
+	justify-content: center;
+}
+
+h1 {
+	font-size: 3.5rem;
+	margin-bottom: 3rem;
+	margin-top: -8rem;
+	color: #4942e4;
+}
+
+.options-container {
+	display: flex;
+	gap: 4rem;
+}
+
+a {
+	padding: 1rem 2rem;
+	background-color: #4942e4;
+	color: #fff;
+	font-size: 2rem;
+	border-radius: 8px;
+}

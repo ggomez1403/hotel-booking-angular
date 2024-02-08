@@ -1,0 +1,56 @@
+<section class="amenities">
+	<article class="amenities-item">
+		<div class="amenity-title">
+			<i class="fa-solid fa-shower"></i>
+			<p>Bathroom</p>
+		</div>
+		<ul>
+			<li *ngFor="let item of room.bathroomAmenities">{{ item }}</li>
+		</ul>
+	</article>
+	<article class="amenities-item">
+		<div class="amenity-title">
+			<i class="fa-solid fa-bed"></i>
+			<p>Bedroom</p>
+		</div>
+		<ul>
+			<li *ngFor="let item of room.bedroomAmenities">{{ item }}</li>
+		</ul>
+	</article>
+	<article class="amenities-item">
+		<div class="amenity-title">
+			<i class="fa-solid fa-tv"></i>
+			<p>Entertainment</p>
+		</div>
+		<ul>
+			<li *ngFor="let item of room.entertainmentAmenities">{{ item }}</li>
+		</ul>
+	</article>
+	<article class="amenities-item">
+		<div class="amenity-title">
+			<i class="fa-solid fa-utensils"></i>
+			<p>Food and drink</p>
+		</div>
+		<ul>
+			<li *ngFor="let item of room.foodAndDrinksAmenities">{{ item }}</li>
+		</ul>
+	</article>
+	<article class="amenities-item">
+		<div class="amenity-title">
+			<i class="fa-solid fa-wifi"></i>
+			<p>Internet</p>
+		</div>
+		<ul>
+			<li *ngFor="let item of room.internetAmenities">{{ item }}</li>
+		</ul>
+	</article>
+	<article class="amenities-item">
+		<div class="amenity-title">
+			<i class="fa-solid fa-wifi"></i>
+			<p>More</p>
+		</div>
+		<ul>
+			<li *ngFor="let item of room.moreAmenities">{{ item }}</li>
+		</ul>
+	</article>
+</section>

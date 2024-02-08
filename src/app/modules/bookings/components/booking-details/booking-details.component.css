@@ -1,0 +1,218 @@
+.container {
+	display: flex;
+	justify-content: center;
+	gap: 5rem;
+}
+
+.main-info {
+	background-color: #f3f3f5;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1.2rem;
+	height: 700px;
+	border-radius: 15px;
+}
+
+img {
+	padding: 0.5rem;
+	display: flex;
+	max-width: 530px;
+}
+
+.title {
+	font-weight: 800;
+}
+
+.dates-container {
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1rem;
+	border-radius: 15px;
+}
+
+.date {
+	display: flex;
+	justify-content: space-between;
+}
+
+.booking-info {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	width: 600px;
+}
+
+.book-date {
+	font-weight: 800;
+}
+
+.price-container {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	gap: 1rem;
+}
+
+.price {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	align-items: center;
+}
+
+.divider {
+	background-color: #000;
+	height: 1.2px;
+}
+
+.total,
+.price-total {
+	font-weight: 800;
+	font-size: 1.2rem;
+}
+
+.detail {
+	background-color: #f3f3f5;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 2rem 2rem 3rem;
+	border-radius: 15px;
+}
+
+.detail-title {
+	display: flex;
+	gap: 1rem;
+	font-size: 1.5rem;
+	align-items: center;
+	font-weight: 800;
+	color: #4942e4;
+}
+
+.checks-container {
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+	margin-top: 1rem;
+}
+
+.check {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+}
+
+.check p {
+	font-weight: 800;
+	font-size: 1.3rem;
+}
+
+input {
+	color: #4942e4;
+	border: 2px solid #4942e4;
+	font-family: 'Mulish';
+	padding: 0.5rem 0.8rem;
+	font-size: 1rem;
+	border-radius: 8px;
+	width: 250px;
+}
+
+.user-details {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 0.5rem;
+}
+
+.user-details p {
+	font-weight: 800;
+}
+
+.user-details span {
+	font-weight: 400;
+}
+
+.highlights {
+	display: grid;
+	grid-template-columns: repeat(2, 200px);
+	justify-content: space-between;
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
+.highlights i {
+	color: #4942e4;
+}
+
+.highlights-title {
+	font-weight: 800;
+	font-size: 1.3rem;
+	margin: 0.5rem 0 1.5rem;
+}
+
+.highlights li {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.btn {
+	font-size: 1.3rem;
+	margin: 1.2rem 0 2rem;
+	font-weight: 800;
+}
+
+.checkout {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin: 1rem 0.5rem;
+}
+
+.checkout-info-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.checkout-info {
+	display: flex;
+	margin-bottom: 1rem;
+}
+
+.danger {
+	margin: 0.5rem 0;
+}
+
+.input-large {
+	width: 100%;
+}
+
+.input-short {
+	width: 30%;
+}
+
+.expiration-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.expiration {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+}
+
+.expiration span {
+	font-size: 1.8rem;
+	font-weight: 800;
+}
+
+.cvc {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}

@@ -1,0 +1,33 @@
+<section class="container">
+	<h1>{{ room.name }}</h1>
+	<div class="room-info-container">
+		<article class="room-info">
+			<div class="amenities-group">
+				<h2>Room amenities</h2>
+				<app-room-amenities></app-room-amenities>
+			</div>
+		</article>
+		<article class="secondary-info">
+			<img src="{{ room.imgUrl }}" alt="{{ room.name }}" />
+			<div class="price-summary">
+				<p class="price-title">Price Summary</p>
+				<div class="summary-item">
+					<p>Room Charges (1 room x 1 night)</p>
+					<p>{{ room.initialPrice | currency: 'USD' }}</p>
+				</div>
+				<div class="summary-item">
+					<p>Taxes & Fees</p>
+					<p>{{ room.taxesAndFees | currency: 'USD' }}</p>
+				</div>
+				<div class="divider"></div>
+				<div class="summary-item payable-now">
+					<p>Payable Now</p>
+					<p>{{ room.totalPrice | currency: 'USD' }}</p>
+				</div>
+				<button routerLink="/bookings/rooms/{{ room.id }}" class="btn" [disabled]="!room.available">
+					Book now
+				</button>
+			</div>
+		</article>
+	</div>
+</section>

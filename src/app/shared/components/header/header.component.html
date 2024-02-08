@@ -1,0 +1,20 @@
+<header>
+	<nav>
+		<a routerLink="/"><img src="https://i.imgur.com/j4Fdm7R.png" alt="logo" /></a>
+		<ul>
+			<li><a routerLink="/">Home</a></li>
+			<li><a href="">Explore</a></li>
+			<li><a routerLink="/rooms">Rooms</a></li>
+			<li><a href="">About</a></li>
+			<li><a href="">Contact</a></li>
+		</ul>
+		<div class="links">
+			<a *ngIf="!isAdmin() && isLoggedIn" routerLink="/bookings/my-bookings" class="link"
+				>My bookings</a
+			>
+			<a *ngIf="isAdmin() && isLoggedIn" routerLink="/admin" class="link">Admin Options</a>
+			<button *ngIf="!isLoggedIn" routerLink="/auth/login" class="btn">Log In</button>
+			<button *ngIf="isLoggedIn" (click)="logout()" class="btn log-out">Log Out</button>
+		</div>
+	</nav>
+</header>

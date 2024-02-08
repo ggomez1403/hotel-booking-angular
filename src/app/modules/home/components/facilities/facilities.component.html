@@ -1,0 +1,10 @@
+<section class="container">
+	<h1>Our Facilities</h1>
+	<p>We offer modern (5 star) hotel facilities for your comfort.</p>
+	<article class="facilities">
+		<div *ngFor="let facility of facilitiesList" class="single-facility">
+			<i class="fa-solid {{ facility.icon }}"></i>
+			<p>{{ facility.name }}</p>
+		</div>
+	</article>
+</section>

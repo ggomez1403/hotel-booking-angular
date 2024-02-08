@@ -1,0 +1,159 @@
+<section class="container">
+	<h1>Create Room</h1>
+	<form class="create-room" [formGroup]="createRoomForm">
+		<div class="form-col">
+			<label for="name">Name</label>
+			<input
+				type="text"
+				id="name"
+				placeholder="Ex. Standard Room, 2 Queen Beds, Non Smoking, Mountain View"
+				formControlName="name"
+			/>
+			<div *ngIf="name?.touched && name?.errors?.['required']" class="danger">
+				Room Name is required
+			</div>
+		</div>
+
+		<div class="form-col">
+			<label for="imgUrl">Image Url</label>
+			<input
+				type="text"
+				id="imgUrl"
+				placeholder="Ex. https://i.imgur.com/r5l0NwZ.jpg"
+				formControlName="imgUrl"
+			/>
+			<div *ngIf="imgUrl?.touched && imgUrl?.errors?.['required']" class="danger">
+				Room Image URL is required
+			</div>
+		</div>
+
+		<div class="form-col">
+			<label for="type">Type</label>
+			<input type="text" id="type" placeholder="Ex. Standard Room" formControlName="type" />
+			<div *ngIf="type?.touched && type?.errors?.['required']" class="danger">
+				Room Type is required
+			</div>
+		</div>
+
+		<div class="form-col">
+			<label for="capacity">Capacity</label>
+			<input type="number" id="capacity" placeholder="Ex. 4" formControlName="capacity" />
+			<div *ngIf="capacity?.touched && capacity?.errors?.['required']" class="danger">
+				Room Capacity is required
+			</div>
+		</div>
+
+		<div class="form-col">
+			<label for="initialPrice">Initial Price</label>
+			<input
+				type="number"
+				id="initialPrice"
+				placeholder="Ex. 100.00"
+				formControlName="initialPrice"
+			/>
+			<div *ngIf="initialPrice?.touched && initialPrice?.errors?.['required']" class="danger">
+				Room initial price is required
+			</div>
+		</div>
+
+		<div class="form-col">
+			<label for="taxesAndFees">Taxes and fees</label>
+			<input
+				type="number"
+				id="taxesAndFees"
+				placeholder="Ex. 25.50"
+				formControlName="taxesAndFees"
+			/>
+			<div *ngIf="taxesAndFees?.touched && taxesAndFees?.errors?.['required']" class="danger">
+				Room taxes and fees price is required
+			</div>
+		</div>
+
+		<div class="form-col">
+			<label for="bathroomAmenities">Bathroom Amenities</label>
+			<input
+				type="text"
+				id="bathroomAmenities"
+				placeholder="Ex. Shower, Bathtub, Towels"
+				formControlName="bathroom"
+			/>
+			<div *ngIf="bathroom?.touched && bathroom?.errors?.['required']" class="danger">
+				Room bathroom amenities is required
+			</div>
+		</div>
+
+		<div class="form-col">
+			<label for="bedroomAmenities">Bedroom Amenities</label>
+			<input
+				type="text"
+				id="bedroomAmenities"
+				placeholder="Ex. Queen Bed, Sofa Bed"
+				formControlName="bedroom"
+			/>
+			<div *ngIf="bedroom?.touched && bedroom?.errors?.['required']" class="danger">
+				Room bedroom amenities is required
+			</div>
+		</div>
+
+		<div class="form-col">
+			<label for="entertainmentAmenities">Entertainment Amenities</label>
+			<input
+				type="text"
+				id="entertainmentAmenities"
+				placeholder="Ex. TV, Wifi"
+				formControlName="entertainment"
+			/>
+			<div *ngIf="entertainment?.touched && entertainment?.errors?.['required']" class="danger">
+				Room entertainment amenities is required
+			</div>
+		</div>
+
+		<div class="form-col">
+			<label for="foodAndDrinksAmenities">Food and drinks Amenities</label>
+			<input
+				type="text"
+				id="foodAndDrinksAmenities"
+				placeholder="Ex. Coffee Maker, Mini Fridge"
+				formControlName="foodAndDrinks"
+			/>
+			<div *ngIf="foodAndDrinks?.touched && foodAndDrinks?.errors?.['required']" class="danger">
+				Room food and drinks amenities is required
+			</div>
+		</div>
+
+		<div class="form-col">
+			<label for="internetAmenities">Internet Amenities</label>
+			<input type="text" id="internetAmenities" placeholder="Ex. Wifi" formControlName="internet" />
+			<div *ngIf="internet?.touched && internet?.errors?.['required']" class="danger">
+				Room internet amenities is required
+			</div>
+		</div>
+
+		<div class="form-col">
+			<label for="moreAmenities">More Amenities</label>
+			<input
+				type="text"
+				id="moreAmenities"
+				placeholder="Ex. Air Conditioning, Heating"
+				formControlName="more"
+			/>
+			<div *ngIf="more?.touched && more?.errors?.['required']" class="danger">
+				Room more amenities is required
+			</div>
+		</div>
+
+		<div class="form-col">
+			<label for="highlights">Highlights</label>
+			<input
+				type="text"
+				id="highlights"
+				placeholder="Ex. Central Location, Pet-Friendly"
+				formControlName="highlights"
+			/>
+			<div *ngIf="highlights?.touched && highlights?.errors?.['required']" class="danger">
+				Room highlights amenities is required
+			</div>
+		</div>
+	</form>
+	<a class="btn" routerLink="/rooms" (click)="onSubmit()">Create Room</a>
+</section>

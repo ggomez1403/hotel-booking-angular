@@ -1,0 +1,47 @@
+.container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: #FAFAFA;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-left: 6rem;
+}
+
+h1{
+  font-family: 'Dancing Script';
+  color: #4942E4;
+  font-size: 3.5rem;
+}
+
+h3{
+  font-size: 3rem;
+  max-width: 620px;
+}
+
+p{
+  font-size: 1.3rem;
+  max-width: 360px;
+}
+
+.buttons{
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn{
+  border-radius: 30px;
+}
+
+img{
+  height: 85vh;
+}
+
+.hero-img{
+  margin-right: 6rem;
+}

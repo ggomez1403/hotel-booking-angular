@@ -1,0 +1,196 @@
+<section class="container">
+	<article class="booking-info">
+		<section class="detail">
+			<div class="detail-title">
+				<i class="fa-regular fa-calendar-days"></i>
+				<p>Step 1: Check details</p>
+			</div>
+			<div class="divider"></div>
+			<form [formGroup]="checkDatesForm" class="checks-container">
+				<div class="check">
+					<p>Check-in</p>
+					<input type="date" formControlName="checkIn" (change)="onCheckInChange($event)" />
+					<div *ngIf="checkIn?.touched && checkIn?.errors?.['required']" class="danger">
+						Check In Date is required
+					</div>
+				</div>
+				<div class="check">
+					<p>Check-out</p>
+					<input type="date" formControlName="checkOut" (change)="onCheckOutChange($event)" />
+					<div *ngIf="checkOut?.touched && checkOut?.errors?.['required']" class="danger">
+						Check Out Date is required
+					</div>
+				</div>
+			</form>
+		</section>
+		<section class="detail">
+			<div class="detail-title">
+				<i class="fa-solid fa-user"></i>
+				<p>Step 2: Your details</p>
+			</div>
+			<div class="divider"></div>
+			<article class="user-details">
+				<p class="detail-text">
+					First name: <span>{{ firstName }}</span>
+				</p>
+				<p class="detail-text">
+					Last name: <span>{{ lastName }}</span>
+				</p>
+				<p class="detail-text">
+					Email Address: <span>{{ email }}</span>
+				</p>
+				<p class="detail-text">
+					Phone Number: <span>{{ phoneNumber }}</span>
+				</p>
+			</article>
+		</section>
+		<section class="detail">
+			<div class="detail-title">
+				<i class="fa-solid fa-bed"></i>
+				<p>Step 3: Room details</p>
+			</div>
+			<div class="divider"></div>
+			<article class="room-details">
+				<p class="highlights-title">Room highlights</p>
+				<ul class="highlights">
+					<li *ngFor="let item of highlights">
+						<i class="fa-solid fa-circle-chevron-right"></i>
+						<span>{{ item }}</span>
+					</li>
+				</ul>
+			</article>
+		</section>
+		<section class="detail">
+			<div class="detail-title">
+				<i class="fa-solid fa-cart-shopping"></i>
+				<p>Step 3: Checkout</p>
+			</div>
+			<div class="divider"></div>
+			<form class="checkout" [formGroup]="checkoutForm">
+				<label for="name">Name on card</label>
+				<input type="text" id="name" class="input-large" formControlName="name" />
+
+				<div *ngIf="name?.touched && name?.errors?.['required']" class="danger">
+					Name is required
+				</div>
+
+				<div *ngIf="name?.touched && name?.errors?.['minlength']" class="danger">
+					Name must be longer than
+					{{ name?.errors?.['minlength']?.requiredLength }} characters
+				</div>
+
+				<label for="cardNumber">Card Number</label>
+				<input type="number" id="cardNumber" class="input-large" formControlName="cardNumber" />
+
+				<div *ngIf="cardNumber?.touched && cardNumber?.errors?.['required']" class="danger">
+					Card number is required
+				</div>
+
+				<div *ngIf="cardNumber?.touched && cardNumber?.errors?.['min']" class="danger">
+					Card Number must be longer than 13 characters
+				</div>
+
+				<div *ngIf="cardNumber?.touched && cardNumber?.errors?.['max']" class="danger">
+					Card Number mustn't be longer than 18 characters
+				</div>
+
+				<div class="checkout-info-container">
+					<div class="checkout-info">
+						<div class="expiration-container">
+							<p>Expiration</p>
+							<div class="expiration">
+								<input type="number" class="input-short" formControlName="expMonth" />
+								<span>/</span>
+								<input type="number" class="input-short" formControlName="expYear" />
+							</div>
+						</div>
+						<div class="cvc">
+							<p>CVC</p>
+							<input type="number" formControlName="cvcNumber" />
+						</div>
+					</div>
+
+					<div
+						*ngIf="
+							expMonth?.touched &&
+							(expMonth?.hasError('required') ||
+								expMonth?.hasError('min') ||
+								expMonth?.hasError('max'))
+						"
+						class="danger"
+					>
+						Exp. Month is required and must be between 1 and 12.
+					</div>
+
+					<div
+						*ngIf="
+							expYear?.touched &&
+							(expYear?.hasError('required') ||
+								expYear?.hasError('min') ||
+								expYear?.hasError('max'))
+						"
+						class="danger"
+					>
+						Exp. Year is required and must be between 0 and 99.
+					</div>
+
+					<div
+						*ngIf="
+							cvcNumber?.touched &&
+							(cvcNumber?.hasError('required') ||
+								cvcNumber?.hasError('min') ||
+								cvcNumber?.hasError('max'))
+						"
+						class="danger"
+					>
+						CVC Number is required and must be 3 digits long.
+					</div>
+				</div>
+			</form>
+		</section>
+		<button
+			routerLink="/bookings/my-bookings"
+			[disabled]="!(checkDatesForm.valid && checkoutForm.valid)"
+			class="btn"
+			(click)="submitReservationData()"
+		>
+			Book Room
+		</button>
+	</article>
+	<article class="main-info">
+		<img src="{{ room.imgUrl }}" alt="{{ room.name }}" />
+		<p class="title">{{ room.name }}</p>
+		<section class="info">
+			<article class="dates-container">
+				<div class="date">
+					<p>Check-in</p>
+					<p class="book-date">{{ checkInDate | date: 'EEEE, MMMM d, y' }}</p>
+				</div>
+				<div class="date">
+					<p>Check-out</p>
+					<p class="book-date">{{ checkOutDate | date: 'EEEE, MMMM d, y' }}</p>
+				</div>
+			</article>
+			<article class="price-container">
+				<div class="price">
+					<p>
+						Room Charges ({{ daysDifference }} {{ daysDifference === 1 ? 'day' : 'days' }} charges)
+					</p>
+					<p>{{ room.initialPrice * daysDifference | currency: 'USD' }}</p>
+				</div>
+				<div class="price">
+					<p>
+						Taxes and fees ({{ daysDifference }} {{ daysDifference === 1 ? 'day' : 'days' }} taxes
+						and fees)
+					</p>
+					<p>{{ room.taxesAndFees * daysDifference | currency: 'USD' }}</p>
+				</div>
+				<div class="divider"></div>
+				<div class="price">
+					<p class="price-total">Total to pay now</p>
+					<p class="total">{{ room.totalPrice * daysDifference | currency: 'USD' }}</p>
+				</div>
+			</article>
+		</section>
+	</article>
+</section>

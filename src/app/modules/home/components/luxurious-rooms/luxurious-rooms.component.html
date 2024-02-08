@@ -1,0 +1,11 @@
+<section class="container">
+	<h2>Luxurious Rooms</h2>
+	<div class="divider"></div>
+	<p>All room are design for your comfort</p>
+	<article class="rooms">
+		<section class="single-room" *ngFor="let room of luxuriousRoomsList">
+			<img src="{{ room.imgSrc }}" alt="{{ room.name }}" />
+			<p>{{ room.desc }}</p>
+		</section>
+	</article>
+</section>

@@ -1,0 +1,22 @@
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 2rem;
+	gap: 5rem;
+}
+
+ul {
+	display: flex;
+	gap: 2.5rem;
+}
+
+.log-out {
+	background-color: #11009e;
+}
+
+.link {
+	margin-right: 2.5rem;
+	font-weight: bold;
+	color: #4942e4;
+}

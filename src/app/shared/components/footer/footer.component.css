@@ -1,0 +1,63 @@
+footer{
+  background-color:#4942E4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #FFF;
+}
+
+.main-footer-info{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 0 3rem;
+  padding: 3rem 0 0;
+}
+
+a{
+  color: #FFF;
+}
+
+p{
+  max-width: 300px;
+  text-align: justify;
+  margin: 0 0 1rem;
+}
+
+h3{
+  margin: 1.5rem 0;
+}
+
+form{
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 0.4rem;
+  border-radius: 8px;
+}
+
+input, button{
+  border: none;
+}
+
+input, button{
+  padding: 1rem 2rem;
+  font-family: 'Mulish';
+  font-size: 1rem;
+}
+
+input{
+  padding-left: 0.5rem;
+  padding-right: 4.5rem;
+}
+
+.company{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 1rem 0;
+}
+
+.divider{
+  height: 0.1rem;
+  background-color: rgba(217, 217, 217, 0.50);
+}

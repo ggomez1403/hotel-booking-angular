@@ -1,0 +1,18 @@
+<section class="container">
+	<h2>Testimonies</h2>
+	<article class="testimonies">
+		<section *ngFor="let testimony of testimoniesList" class="single-testimonie">
+			<div class="date">
+				<span>{{ testimony.date }}</span>
+				<div class="stars">
+					<i *ngFor="let star of testimony.stars" class="{{ star }}"></i>
+				</div>
+			</div>
+			<p>
+				<i class="fa-solid fa-quote-left"></i>{{ testimony.desc
+				}}<i class="fa-solid fa-quote-right"></i>
+			</p>
+			<span class="author">{{ testimony.author }}</span>
+		</section>
+	</article>
+</section>

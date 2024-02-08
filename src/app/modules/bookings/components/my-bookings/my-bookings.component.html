@@ -1,0 +1,29 @@
+<ng-template #noBookings>
+	<section class="no-bookings">
+		<h1>You don't have any reservations</h1>
+	</section>
+</ng-template>
+
+<section class="container" *ngIf="reservations.length > 0; else noBookings">
+	<h1>My Bookings</h1>
+	<article class="booking" *ngFor="let reservation of reservations">
+		<img src="{{ roomImgUrl }}" alt="{{ roomName }}" />
+		<div class="info-container">
+			<section class="info">
+				<p class="title">{{ roomName }}</p>
+				<p class="check">
+					Check-in: <span>{{ reservation.startDate | date: 'EEEE, MMMM d, y' }}</span>
+				</p>
+				<p class="check">
+					Check-out: <span>{{ reservation.endDate | date: 'EEEE, MMMM d, y' }} </span>
+				</p>
+			</section>
+			<div class="buttons">
+				<button class="btn" routerLink="/bookings/update-booking/{{ reservation.id }}">
+					Modify Booking
+				</button>
+				<button class="btn" (click)="cancelBooking(reservation.id)">Cancel Booking</button>
+			</div>
+		</div>
+	</article>
+</section>

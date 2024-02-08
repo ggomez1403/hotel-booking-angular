@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Mulish:wght@400;500;600;800&display=swap');
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+:root {
+	--ff-primary: 'Mulish', sans-serif;
+	--main-color: #4942e4;
+	--secondary-color: #11009e;
+	--black-color: #000;
+	--white-color: #fff;
+	--transition: all 0.3s linear;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: var(--black-color);
+	font-weight: 500;
+}
+
+body {
+	font-family: var(--ff-primary);
+}
+
+button {
+	border: none;
+}
+
+.btn {
+	background-color: var(--main-color);
+	padding: 0.8rem 2.5rem;
+	color: var(--white-color);
+	border-radius: 0.3rem;
+	font-family: var(--ff-primary);
+	font-size: 1rem;
+	cursor: pointer;
+	transition: var(--transition);
+}
+
+.btn:hover {
+	background-color: var(--secondary-color);
+}
+
+input {
+	font-family: var(--ff-primary);
+}
+
+.danger {
+	background-color: #f6ccd0;
+	color: #76303b;
+	padding: 1rem;
+	border-radius: 8px;
+}
+
+.btn:disabled {
+	cursor: not-allowed;
+}
