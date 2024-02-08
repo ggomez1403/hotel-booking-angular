@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core'
-import { Facility } from '../../interfaces/facility.interface'
-import { LuxuryRoom } from '../../interfaces/luxuryRoom.interface'
-import { Testimony } from '../../interfaces/testimony.interface'
-import { SharedService } from '../../services/sharedService.service'
+import { Component, OnInit } from '@angular/core';
+import { Facility } from '../../interfaces/facility.interface';
+import { LuxuryRoom } from '../../interfaces/luxuryRoom.interface';
+import { Testimony } from '../../interfaces/testimony.interface';
+import { SharedService } from '../../services/shared-service.service';
 
 @Component({
 	selector: 'app-main-page',
@@ -11,20 +11,20 @@ import { SharedService } from '../../services/sharedService.service'
 })
 export class MainPageComponent implements OnInit {
 	ngOnInit(): void {
-		window.scrollTo(0, 0)
+		window.scrollTo(0, 0);
 	}
 
 	constructor(private sharedService: SharedService) {}
 
 	get facilities(): Facility[] {
-		return [...this.sharedService.facilities]
+		return [...this.sharedService.facilities];
 	}
 
 	get luxuriousRooms(): LuxuryRoom[] {
-		return [...this.sharedService.luxuriousRooms]
+		return [...this.sharedService.luxuriousRooms];
 	}
 
 	get testimonies(): Testimony[] {
-		return [...this.sharedService.testimonies]
+		return [...this.sharedService.testimonies];
 	}
 }

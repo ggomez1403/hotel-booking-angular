@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LoginAuthService } from '../../../modules/auth/services/login-auth.service';
 
@@ -13,10 +12,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 	subscription?: Subscription;
 
-	constructor(
-		private loginAuthService: LoginAuthService,
-		private router: Router
-	) {
+	constructor(private loginAuthService: LoginAuthService) {
 		this.loginAuthService.getTokenClaims();
 	}
 

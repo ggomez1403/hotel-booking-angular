@@ -1,35 +1,37 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  });
+	let fixture: ComponentFixture<AppComponent>;
+	let component: AppComponent;
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+	beforeEach(() => {
+		TestBed.configureTestingModule({
+			declarations: [AppComponent, HeaderComponent, FooterComponent],
+			imports: [HttpClientModule, AppRoutingModule]
+		});
+		fixture = TestBed.createComponent(AppComponent);
+		component = fixture.componentInstance;
+	});
 
-  it(`should have as title 'hotel-booking-angular'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('hotel-booking-angular');
-  });
+	it('should create the app', () => {
+		expect(component).toBeTruthy();
+	});
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('hotel-booking-angular app is running!');
-  });
+	it('should render app-header, router-outlet, and app-footer', () => {
+		fixture.detectChanges();
+		const compiled = fixture.nativeElement;
+
+		expect(compiled.querySelector('app-header')).toBeTruthy();
+		expect(compiled.querySelector('router-outlet')).toBeTruthy();
+		expect(compiled.querySelector('app-footer')).toBeTruthy();
+	});
+
+	it('should have title set to "hotel-booking-angular"', () => {
+		expect(component.title).toBe('hotel-booking-angular');
+	});
 });
