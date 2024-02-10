@@ -1,0 +1,46 @@
+.hero {
+	background: url('https://i.imgur.com/PyKq0TZ.png') no-repeat center/cover;
+	height: calc(100vh - 110px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	gap: 6rem;
+}
+
+h1 {
+	font-size: 4.5rem;
+}
+
+.hero p {
+	font-size: 1.4rem;
+	width: 50%;
+	text-align: center;
+}
+
+.about {
+	display: flex;
+	flex-direction: column;
+	gap: 5rem;
+	margin: 2rem 10rem;
+	align-items: center;
+}
+
+h2 {
+	font-size: 2.8rem;
+	color: #4942e4;
+	margin-top: 2rem;
+}
+
+.about-info-container {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	margin-bottom: 4rem;
+}
+
+.about-info-container p {
+	text-align: justify;
+	font-size: 1.2rem;
+}

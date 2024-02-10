@@ -1,0 +1,70 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 4rem;
+}
+
+h1 {
+	color: #463ee0;
+	font-size: 3rem;
+	margin-top: 1rem;
+}
+
+.explore-container {
+	display: flex;
+	flex-direction: column;
+	gap: 6rem;
+	margin-bottom: 4rem;
+}
+
+.luxurious {
+	background: url('https://i.imgur.com/yGpgATo.png') no-repeat center/cover;
+}
+
+.gym-center {
+	background: url('https://i.imgur.com/8ML03nC.png') no-repeat center/cover;
+}
+
+.restaurant {
+	background: url('https://i.imgur.com/g8JVQXb.png') no-repeat center/cover;
+}
+
+.explore-item {
+	border-radius: 2rem;
+	margin: 3rem;
+	width: 80vw;
+	height: 500px;
+	position: relative;
+}
+
+.explore-item-info {
+	background-color: #fff;
+	width: 65%;
+	position: absolute;
+	top: 130%;
+	left: 50%;
+	transform: translate(-50%, -130%);
+	border-radius: 8px;
+	box-shadow: 0px 5px 19px -5px rgba(0, 0, 0, 0.54);
+}
+
+.divider {
+	background-color: #463ee0;
+	height: 25px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	text-align: center;
+	padding: 1.5rem 5rem;
+}
+
+h2 {
+	color: #463ee0;
+	font-size: 1.4rem;
+}

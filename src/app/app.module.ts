@@ -10,6 +10,7 @@ import { InjectSessionInterceptor } from './core/interceptors/inject-session.int
 import { AdminModule } from './modules/admin/admin.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { BookingsModule } from './modules/bookings/bookings.module';
+import { ExploreModule } from './modules/explore/explore.module';
 import { HomeModule } from './modules/home/home.module';
 import { RoomsModule } from './modules/rooms/rooms.module';
 import { SharedModule } from './shared/shared.module';
@@ -26,7 +27,8 @@ import { SharedModule } from './shared/shared.module';
 		SharedModule,
 		RoomsModule,
 		HttpClientModule,
-		AdminModule
+		AdminModule,
+		ExploreModule
 	],
 	providers: [
 		CookieService,

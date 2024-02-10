@@ -6,7 +6,7 @@ import { Testimony } from '../interfaces/testimony.interface';
 @Injectable({
 	providedIn: 'root'
 })
-export class SharedService {
+export class HomeService {
 	public facilities: Facility[] = [
 		{
 			icon: 'fa-person-swimming',
