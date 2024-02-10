@@ -15,7 +15,7 @@ Paradise View representa un proyecto elaborado en Angular, concebido como una pl
 - **Guardián de Sesión:** Se ha establecido una restricción de acceso a ciertas secciones de la aplicación, como la reserva de habitaciones, únicamente para usuarios autenticados.
 - **Carga Perezosa:** Se ha mejorado la velocidad de carga de la página mediante la implementación de carga perezosa para las rutas.
 
-## 🚀 Funcionalidades Planificadas
+### 🚀 Funcionalidades Planificadas
 
 - **Vistas por Roles:** Implementación de diferentes vistas según el rol del usuario, incluyendo un rol de administrador con capacidades para agregar, modificar, eliminar o listar habitaciones, usuarios, y reservas.
 

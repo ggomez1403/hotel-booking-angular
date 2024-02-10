@@ -11,7 +11,7 @@ Paradise View representa un proyecto elaborado en Angular, concebido como una pl
 - **Uso de templates en el listado de habitaciones y reservas:** Si no hay habitaciones disponibles para reservar o reservas hechas por el usuario se mostrara un mensaje indicándole al usuario que no hay habitaciones disponibles o reservas hechas
 - **Uso de Lifecycle Hooks:** Durante el desarrollo de Paradise View, se aprovecharon los **Lifecycle Hooks** proporcionados por Angular para gestionar el ciclo de vida de los componentes. Haciendo uso especialmente de **OnInit**, utilizado para realizar acciones iniciales cuando un componente es creado y **OnDestroy**, implementado para liberar recursos y realizar limpieza cuando un componente es destruido.
 
-## 🚀 Funcionalidades Planificadas
+### 🚀 Funcionalidades Planificadas
 
 - **Testing de Componentes:** Para asegurar la robustez y la fiabilidad de nuestra aplicación, implementaremos pruebas exhaustivas de componentes, garantizando así un funcionamiento óptimo y sin errores.
 
