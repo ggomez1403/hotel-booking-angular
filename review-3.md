@@ -10,7 +10,7 @@ Paradise View representa un proyecto elaborado en Angular, concebido como una pl
 
 - **Testing de Componentes:** Para asegurar la robustez y la fiabilidad de la aplicación, se implementaron pruebas exhaustivas de componentes, garantizando así un funcionamiento óptimo y sin errores.
 
-## 🚀 Funcionalidades Planificadas
+### 🚀 Funcionalidades Planificadas
 
 - **Filtro de habitaciones:** Este nuevo componente permitirá a los usuarios personalizar su búsqueda según sus preferencias, facilitando la elección de habitaciones que se ajusten a sus necesidades específicas.
 - **Gestion completa de habitaciones por administradores:** Los usuarios con roles de administrador no solo tienen la capacidad de crear nuevas habitaciones, sino que ahora también contaran con la funcionalidad de **Actualizar y Borrar Datos de Habitaciones Existentes**. Esta mejora permite una gestión más completa y flexible del inventario de habitaciones, permitiendo a los administradores mantener la información siempre precisa y adaptada a las necesidades cambiantes.
