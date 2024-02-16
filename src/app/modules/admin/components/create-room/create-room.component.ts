@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+	AbstractControl,
+	FormBuilder,
+	FormControl,
+	FormGroup,
+	ValidationErrors,
+	Validators
+} from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { AdminService } from '../../services/admin.service';
 
@@ -33,6 +40,7 @@ export class CreateRoomComponent implements OnInit {
 	public createRoomForm!: FormGroup;
 
 	ngOnInit(): void {
+		window.scrollTo(0, 0);
 		this.createRoomForm = this.initForm();
 	}
 
@@ -92,7 +100,7 @@ export class CreateRoomComponent implements OnInit {
 	initForm(): FormGroup {
 		return this.fb.group({
 			name: ['', Validators.required],
-			imgUrl: ['', Validators.required],
+			imgUrl: ['', [Validators.required, this.isValidLink]],
 			type: ['', Validators.required],
 			capacity: ['', Validators.required],
 			initialPrice: ['', Validators.required],
@@ -105,6 +113,14 @@ export class CreateRoomComponent implements OnInit {
 			more: ['', Validators.required],
 			highlights: ['', Validators.required]
 		});
+	}
+
+	isValidLink(control: FormControl): ValidationErrors | null {
+		const value = control.value;
+
+		const isValidUrl = /^(ftp|http|https):\/\/[^ "]+$/.test(value);
+
+		return isValidUrl ? null : { notValidUrl: true };
 	}
 
 	get name(): AbstractControl | null {

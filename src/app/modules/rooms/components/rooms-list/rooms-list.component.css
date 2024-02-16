@@ -1,17 +1,17 @@
 .rooms-container {
-	display: grid;
-	grid-template-columns: repeat(3, 450px);
+	display: flex;
+	flex-direction: column;
 	justify-content: space-around;
+	align-items: center;
 	margin: 2rem;
 }
 
 .room-item {
 	background-color: #fff;
 	margin: 2rem 0;
-	max-width: 420px;
+	width: 80vw;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 }
 
 img,
@@ -22,6 +22,8 @@ img,
 img {
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
+	height: 300px;
+	object-fit: cover;
 }
 
 .main-info {
@@ -35,6 +37,20 @@ h2 {
 	font-size: 1.7rem;
 }
 
+.available-base {
+	font-size: 1.1rem;
+	color: #4942e4;
+	font-weight: 800;
+}
+
+.available {
+	color: #3dc270;
+}
+
+.not-available {
+	color: #de414b;
+}
+
 .info-container {
 	display: flex;
 	flex-direction: column;
@@ -44,7 +60,7 @@ h2 {
 .info {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 0.8rem;
+	gap: 1.5rem;
 }
 
 .info-title {
@@ -56,7 +72,6 @@ h2 {
 li {
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	gap: 0.4rem;
 }
 
@@ -94,10 +109,16 @@ a {
 	background-color: #4942e4;
 }
 
+.btn {
+	width: 100%;
+	padding: 0.8rem 1rem;
+}
+
 .no-rooms {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	text-align: center;
 	height: 100vh;
 }
 
@@ -105,4 +126,31 @@ a {
 	font-size: 3rem;
 	margin-top: -5rem;
 	color: #4942e4;
+}
+
+@media screen and (min-width: 950px) {
+	.room-item {
+		width: 380px;
+		height: 690px;
+	}
+
+	.rooms-container {
+		display: grid;
+		grid-template-columns: repeat(2, 400px);
+	}
+
+	.buttons {
+		flex-direction: column;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.room-item {
+		width: 400px;
+	}
+
+	.rooms-container {
+		grid-template-columns: repeat(3, 480px);
+		justify-content: center;
+	}
 }

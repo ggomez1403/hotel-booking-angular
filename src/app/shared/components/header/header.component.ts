@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LoginAuthService } from '../../../modules/auth/services/login-auth.service';
 
@@ -9,14 +8,12 @@ import { LoginAuthService } from '../../../modules/auth/services/login-auth.serv
 	styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-	isLoggedIn = false;
+	public isMenuOpen: boolean = false;
+	public isLoggedIn = false;
 
-	subscription?: Subscription;
+	private subscription?: Subscription;
 
-	constructor(
-		private loginAuthService: LoginAuthService,
-		private router: Router
-	) {
+	constructor(private loginAuthService: LoginAuthService) {
 		this.loginAuthService.getTokenClaims();
 	}
 
@@ -30,6 +27,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 		this.subscription = this.loginAuthService.userInfo$.subscribe((userInfo) => {
 			this.isLoggedIn = !!userInfo.id;
 		});
+	}
+
+	public toggleMenu(): void {
+		this.isMenuOpen = !this.isMenuOpen;
 	}
 
 	logout(): void {

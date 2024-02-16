@@ -1,7 +1,10 @@
 .container {
 	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
 	justify-content: center;
 	gap: 5rem;
+	margin: 3rem 0;
 }
 
 .main-info {
@@ -10,8 +13,9 @@
 	flex-direction: column;
 	gap: 1rem;
 	padding: 1.2rem;
-	height: 700px;
+	height: 600px;
 	border-radius: 15px;
+	width: 450px;
 }
 
 img {
@@ -42,7 +46,7 @@ img {
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
-	width: 600px;
+	width: 450px;
 }
 
 .book-date {
@@ -94,9 +98,12 @@ img {
 
 .checks-container {
 	display: flex;
+	flex-direction: column;
+	align-items: center;
 	justify-content: space-around;
 	text-align: center;
 	margin-top: 1rem;
+	gap: 2rem;
 }
 
 .check {
@@ -179,6 +186,7 @@ input {
 
 .checkout-info {
 	display: flex;
+	gap: 1rem;
 	margin-bottom: 1rem;
 }
 
@@ -211,8 +219,39 @@ input {
 	font-weight: 800;
 }
 
+.expiration input {
+	width: 100%;
+}
+
 .cvc {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+}
+
+.cvc input {
+	width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+	.main-info {
+		width: 600px;
+		height: 700px;
+	}
+
+	.booking-info {
+		width: 600px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.container {
+		flex-direction: row;
+		align-items: start;
+	}
+
+	.checks-container {
+		flex-direction: row;
+		align-items: start;
+	}
 }

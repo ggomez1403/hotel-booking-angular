@@ -15,13 +15,19 @@ export class RoomsListComponent implements OnInit, OnDestroy {
 	public rooms: Room[] = [];
 
 	ngOnInit(): void {
+		window.scrollTo(0, 0);
 		this.getRoomsInfo();
+	}
+
+	handleError(room: Room): void {
+		room.imgUrl = 'https://i.imgur.com/jQ0pmZb.jpg';
 	}
 
 	getRoomsInfo(): void {
 		this.subscription = this.roomService.getAllRooms().subscribe(
 			(rooms) => {
 				this.rooms = rooms;
+				console.log(rooms);
 			},
 			(error) => {
 				console.error('Error when making HTTP request: ', error);

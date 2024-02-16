@@ -1,0 +1,75 @@
+<section class="container">
+	<article class="hero">
+		<h1>Contact us</h1>
+		<p>
+			Discover the essence of Paradise view – a tale of passion, dedication, and a commitment to
+			creating exceptional experiences. Learn more about the heart and soul behind our journey as we
+			invite you to delve into the story that defines us.
+		</p>
+	</article>
+
+	<article class="contact-form">
+		<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+			<h2>Contact Form</h2>
+			<div class="form-container">
+				<div class="form-input">
+					<label for="fullName">Fullname</label>
+					<input
+						type="text"
+						id="fullName"
+						placeholder="Ex. John Becker"
+						formControlName="fullName"
+					/>
+
+					<div *ngIf="fullName?.touched && fullName?.errors?.['required']" class="danger">
+						Full Name is required
+					</div>
+
+					<div *ngIf="fullName?.touched && fullName?.errors?.['minlength']" class="danger">
+						Full Name must be longer than
+						{{ fullName?.errors?.['minlength']?.requiredLength }} characters
+					</div>
+				</div>
+				<div class="form-input">
+					<label for="email">Email</label>
+					<input
+						type="text"
+						id="email"
+						placeholder="Ex. johnbecker@gmail.com"
+						formControlName="email"
+					/>
+
+					<div *ngIf="email?.touched && email?.errors?.['required']" class="danger">
+						Email is required
+					</div>
+
+					<div *ngIf="email?.touched && email?.errors?.['email']" class="danger">
+						Please enter a valid email address
+					</div>
+				</div>
+			</div>
+			<div class="form-input">
+				<label for="message">Message</label>
+				<textarea id="message" placeholder="Your message" formControlName="message"></textarea>
+
+				<div *ngIf="message?.touched && message?.errors?.['required']" class="danger">
+					Message is required
+				</div>
+
+				<div *ngIf="message?.touched && message?.errors?.['minlength']" class="danger">
+					Message must be longer than
+					{{ message?.errors?.['minlength']?.requiredLength }} characters
+				</div>
+			</div>
+			<button class="btn" [disabled]="!contactForm.valid">Send Message</button>
+		</form>
+	</article>
+	<article class="map">
+		<h2>Where to find us</h2>
+		<iframe
+			src="https://maps.google.com/maps?q=Hotel%20hilton%20chapinero&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+			frameborder="0"
+			loading="lazy"
+		></iframe>
+	</article>
+</section>

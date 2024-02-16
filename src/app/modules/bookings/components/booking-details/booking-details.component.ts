@@ -116,6 +116,7 @@ export class BookingDetailsComponent implements OnInit, OnDestroy {
 				this.getReservationInfo();
 			},
 			(error) => {
+				console.log(reservationData);
 				console.log('Error creating reservation:', error);
 			}
 		);
@@ -210,7 +211,7 @@ export class BookingDetailsComponent implements OnInit, OnDestroy {
 				[Validators.required, Validators.min(1000000000000), Validators.max(999999999999999999)]
 			],
 			expMonth: ['', [Validators.required, Validators.min(1), Validators.max(12)]],
-			expYear: ['', [Validators.required, Validators.min(0), Validators.max(99)]],
+			expYear: ['', [Validators.required, Validators.min(24), Validators.max(99)]],
 			cvcNumber: ['', [Validators.required, Validators.min(0), Validators.max(999)]]
 		});
 	}

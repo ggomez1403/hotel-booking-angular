@@ -18,6 +18,8 @@ export class RegisterAdminComponent implements OnInit {
 	public userRole = 'ADMIN';
 
 	ngOnInit(): void {
+		window.scrollTo(0, 0);
+
 		this.registerForm = this.initForm();
 	}
 

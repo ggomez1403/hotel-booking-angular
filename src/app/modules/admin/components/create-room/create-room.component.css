@@ -3,7 +3,7 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 3rem;
-	margin-bottom: 4rem;
+	margin: 4rem 0;
 }
 
 h1 {
@@ -21,12 +21,13 @@ img {
 }
 
 .create-room {
-	display: grid;
-	grid-template-columns: repeat(2, 300px);
+	display: flex;
+	flex-direction: column;
 	gap: 3rem;
 	background-color: #d8d7e5;
 	padding: 2rem;
 	border-radius: 8px;
+	width: 80vw;
 }
 
 .form-col {
@@ -43,7 +44,19 @@ input {
 
 .btn {
 	text-align: center;
-	width: 600px;
+	width: 80vw;
 	margin-top: 2rem;
 	font-size: 1.3rem;
+}
+
+@media screen and (min-width: 990px) {
+	.create-room {
+		display: grid;
+		grid-template-columns: repeat(2, 300px);
+		width: auto;
+	}
+
+	.btn {
+		width: 600px;
+	}
 }

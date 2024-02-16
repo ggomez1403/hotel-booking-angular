@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../../core/guards/auth.guard';
 import { SessionGuard } from '../../core/guards/session.guard';
 import { AllBookingsComponent } from '../bookings/components/all-bookings/all-bookings.component';
+import { AllRoomsComponent } from '../rooms/components/all-rooms/all-rooms.component';
+import { AllUsersComponent } from './components/all-users/all-users.component';
 import { CreateRoomComponent } from './components/create-room/create-room.component';
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
 import { RegisterAdminComponent } from './components/register-admin/register-admin.component';
@@ -22,6 +24,16 @@ const routes: Routes = [
 	{
 		path: 'create-room',
 		component: CreateRoomComponent,
+		canActivate: [SessionGuard, AuthGuard]
+	},
+	{
+		path: 'all-users',
+		component: AllUsersComponent,
+		canActivate: [SessionGuard, AuthGuard]
+	},
+	{
+		path: 'all-rooms',
+		component: AllRoomsComponent,
 		canActivate: [SessionGuard, AuthGuard]
 	},
 	{

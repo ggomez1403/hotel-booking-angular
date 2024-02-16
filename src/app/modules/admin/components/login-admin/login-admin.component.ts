@@ -18,6 +18,8 @@ export class LoginAdminComponent implements OnInit, OnDestroy {
 	loginForm!: FormGroup;
 
 	ngOnInit(): void {
+		window.scrollTo(0, 0);
+
 		this.loginForm = this.initForm();
 		this.loginAuthService.getTokenClaims();
 	}

@@ -43,6 +43,7 @@ export function getReservationResponseTemplate(): ReservationResponse {
 		endDate: '',
 		roomId: 0,
 		userId: 0,
+		amount: 0,
 		user: getUserTemplate(),
 		room: getRoomTemplate()
 	};

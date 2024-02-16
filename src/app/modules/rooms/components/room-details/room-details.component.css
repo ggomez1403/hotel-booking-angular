@@ -8,11 +8,13 @@
 }
 
 img {
-	width: 580px;
+	/* width: 580px; */
+	width: 80vw;
 }
 
 .room-info-container {
 	display: flex;
+	flex-direction: column;
 	gap: 5rem;
 }
 
@@ -84,6 +86,8 @@ li {
 .secondary-info {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	width: 85vw;
 }
 
 .price-summary {
@@ -91,6 +95,7 @@ li {
 	flex-direction: column;
 	gap: 2rem;
 	margin: 3rem 0 1rem;
+	width: 100%;
 }
 
 .price-title {
@@ -117,4 +122,25 @@ li {
 
 .btn {
 	margin-top: 1rem;
+}
+
+@media screen and (min-width: 900px) {
+	img {
+		width: 600px;
+	}
+
+	.secondary-info {
+		width: auto;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.room-info-container {
+		flex-direction: row;
+	}
+
+	img,
+	.price-summary {
+		width: 580px;
+	}
 }

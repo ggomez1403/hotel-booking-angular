@@ -25,6 +25,10 @@
 			<div *ngIf="imgUrl?.touched && imgUrl?.errors?.['required']" class="danger">
 				Room Image URL is required
 			</div>
+
+			<div *ngIf="imgUrl?.touched && imgUrl?.hasError('notValidUrl')" class="danger">
+				Please enter a valid image URL
+			</div>
 		</div>
 
 		<div class="form-col">

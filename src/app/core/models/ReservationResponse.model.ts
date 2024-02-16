@@ -7,6 +7,7 @@ export interface ReservationResponse {
 	endDate: string;
 	userId: number;
 	roomId: number;
+	amount: number;
 	user: User;
 	room: Room;
 }

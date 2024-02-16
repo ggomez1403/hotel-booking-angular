@@ -2,6 +2,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 3rem 0;
 }
 
 img {
@@ -10,6 +11,7 @@ img {
 
 .img-container {
 	order: 1;
+	display: none;
 }
 
 .form-main-container {
@@ -64,4 +66,25 @@ button {
 	font-family: 'Mulish';
 	font-size: 1rem;
 	margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 1100px) {
+	.container {
+		margin: 0;
+	}
+
+	.img-container {
+		display: block;
+	}
+
+	img {
+		width: 400px;
+		object-fit: cover;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	img {
+		width: auto;
+	}
 }

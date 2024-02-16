@@ -1,63 +1,147 @@
-footer{
-  background-color:#4942E4;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #FFF;
+footer {
+	background-color: #4942e4;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: #fff;
 }
 
-.main-footer-info{
-  display: flex;
-  justify-content: space-evenly;
-  margin: 0 0 3rem;
-  padding: 3rem 0 0;
+.main-footer-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 0 3rem;
+	padding: 3rem 0 0;
 }
 
-a{
-  color: #FFF;
+a {
+	color: #fff;
 }
 
-p{
-  max-width: 300px;
-  text-align: justify;
-  margin: 0 0 1rem;
+p {
+	max-width: 400px;
+	text-align: justify;
+	margin: 0 0 1rem;
 }
 
-h3{
-  margin: 1.5rem 0;
+h3 {
+	margin: 1.5rem 0;
 }
 
-form{
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  padding: 0.4rem;
-  border-radius: 8px;
+form {
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	padding: 0.4rem;
+	border-radius: 8px;
 }
 
-input, button{
-  border: none;
+input,
+button {
+	border: none;
 }
 
-input, button{
-  padding: 1rem 2rem;
-  font-family: 'Mulish';
-  font-size: 1rem;
+input,
+button {
+	padding: 1rem 2rem;
+	font-family: 'Mulish';
+	font-size: 1rem;
 }
 
-input{
-  padding-left: 0.5rem;
-  padding-right: 4.5rem;
+input {
+	padding-left: 0.5rem;
+	padding-right: 4.5rem;
+	width: 250px;
 }
 
-.company{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem 0 1rem 0;
+.company {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 2rem 0 1rem 0;
 }
 
-.divider{
-  height: 0.1rem;
-  background-color: rgba(217, 217, 217, 0.50);
+.divider {
+	height: 0.1rem;
+	background-color: #d9d9d980;
+}
+
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.danger {
+	margin-top: 1rem;
+}
+
+.links {
+	display: grid;
+	grid-template-columns: repeat(2, 170px);
+	gap: 3rem;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	margin-bottom: 2.5rem;
+}
+
+.newsletter {
+	margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 820px) {
+	p {
+		max-width: 600px;
+	}
+
+	.links {
+		display: flex;
+		justify-content: space-between;
+		text-align: left;
+	}
+
+	.newsletter {
+		margin-top: 3rem;
+	}
+
+	.main-footer-info {
+		padding: 2.5rem 0 0;
+	}
+
+	input {
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.links {
+		justify-content: center;
+		gap: 3rem;
+	}
+
+	.main-footer-info {
+		flex-direction: row;
+		gap: 5rem;
+		justify-content: center;
+	}
+
+	p {
+		max-width: 300px;
+	}
+
+	.secondary-info {
+		display: flex;
+		gap: 5rem;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.newsletter {
+		margin-top: 0;
+	}
+
+	input {
+		width: 250px;
+	}
 }

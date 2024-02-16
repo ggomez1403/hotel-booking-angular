@@ -9,43 +9,55 @@
 				every event.
 			</p>
 		</section>
-		<section>
-			<h3>Quick links</h3>
-			<ul>
-				<li><a routerLink="/rooms">Room Booking</a></li>
-				<li><a routerLink="/rooms">Rooms</a></li>
-				<li><a href="">Contact</a></li>
-				<li><a href="">Explore</a></li>
-			</ul>
-		</section>
-		<section>
-			<h3>Company</h3>
-			<ul>
-				<li><a href="">Privacy policy</a></li>
-				<li><a href="">Refund policy</a></li>
-				<li><a href="">F.A.Q</a></li>
-				<li><a href="">About </a></li>
-			</ul>
-		</section>
-		<section>
-			<h3>Social media</h3>
-			<ul>
-				<li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
-				<li><a href="https://twitter.com/home" target="_blank">Twitter</a></li>
-				<li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
-				<li><a href="https://www.linkedin.com/in/ggomezr/" target="_blank">Linkedin</a></li>
-			</ul>
-		</section>
-		<section>
-			<h3>Newsletter</h3>
-			<p>
-				Kindly subscribe to our newsletter to get latest deals on our rooms and vacation discount.
-			</p>
-			<form>
-				<input type="text" placeholder="Enter your email" />
-				<button class="btn">Subscribe</button>
-			</form>
-		</section>
+		<div class="secondary-info">
+			<section class="links">
+				<section>
+					<h3>Quick links</h3>
+					<ul>
+						<li><a routerLink="/rooms">Room Booking</a></li>
+						<li><a routerLink="/rooms">Rooms</a></li>
+						<li><a routerLink="/contact">Contact</a></li>
+						<li><a routerLink="/explore">Explore</a></li>
+					</ul>
+				</section>
+				<section>
+					<h3>Company</h3>
+					<ul>
+						<li><a href="">Privacy policy</a></li>
+						<li><a href="">Refund policy</a></li>
+						<li><a href="">F.A.Q</a></li>
+						<li><a routerLink="/about-us">About </a></li>
+					</ul>
+				</section>
+				<section>
+					<h3>Social media</h3>
+					<ul>
+						<li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+						<li><a href="https://twitter.com/home" target="_blank">Twitter</a></li>
+						<li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+						<li><a href="https://www.linkedin.com/in/ggomezr/" target="_blank">Linkedin</a></li>
+					</ul>
+				</section>
+			</section>
+			<section class="newsletter">
+				<h3>Newsletter</h3>
+				<p>
+					Kindly subscribe to our newsletter to get latest deals on our rooms and vacation discount.
+				</p>
+				<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+					<input type="text" placeholder="Enter your email" formControlName="email" />
+					<button class="btn" [disabled]="!contactForm.valid">Subscribe</button>
+				</form>
+
+				<div *ngIf="email?.touched && email?.errors?.['email']" class="danger">
+					Please enter a valid email address
+				</div>
+
+				<div *ngIf="email?.touched && email?.errors?.['required']" class="danger">
+					Email is required
+				</div>
+			</section>
+		</div>
 	</div>
 	<div class="divider"></div>
 	<div class="company">

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SessionGuard } from './core/guards/session.guard';
 import { AboutUsPageComponent } from './modules/about-us/pages/about-us-page/about-us-page.component';
+import { ContactPageComponent } from './modules/contact/pages/contact-page/contact-page.component';
 import { ExplorePageComponent } from './modules/explore/pages/explore-page/explore-page.component';
 import { MainPageComponent } from './modules/home/pages/main-page/main-page.component';
 
@@ -17,6 +18,10 @@ const routes: Routes = [
 	{
 		path: 'about-us',
 		component: AboutUsPageComponent
+	},
+	{
+		path: 'contact',
+		component: ContactPageComponent
 	},
 	{
 		path: 'auth',

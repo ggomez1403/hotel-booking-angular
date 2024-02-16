@@ -15,13 +15,15 @@ export class AllBookingsComponent implements OnInit, OnDestroy {
 	subscription?: Subscription;
 	displayedColumns: string[] = [
 		'id',
-		'userName',
-		'roomName',
-		'type',
+		'user.firstName',
+		'user.lastName',
+		'room.name',
+		'room.type',
 		'startDate',
 		'endDate',
 		'amount'
 	];
+
 	dataSource!: MatTableDataSource<ReservationResponse>;
 
 	reservations: ReservationResponse[] = [];
@@ -32,6 +34,8 @@ export class AllBookingsComponent implements OnInit, OnDestroy {
 	constructor(private bookingsService: BookingsService) {}
 
 	ngOnInit(): void {
+		window.scrollTo(0, 0);
+
 		this.getReservationInfo();
 	}
 
@@ -41,8 +45,10 @@ export class AllBookingsComponent implements OnInit, OnDestroy {
 			.subscribe((data: ReservationResponse[]) => {
 				this.reservations = data;
 				this.dataSource = new MatTableDataSource(data);
-				this.dataSource.paginator = this.paginator;
-				this.dataSource.sort = this.sort;
+				setTimeout(() => {
+					this.dataSource.paginator = this.paginator;
+					this.dataSource.sort = this.sort;
+				});
 			});
 	}
 

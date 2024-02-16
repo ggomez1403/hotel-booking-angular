@@ -8,6 +8,10 @@ img {
 	height: 99vh;
 }
 
+.img-container {
+	display: none;
+}
+
 .form-main-container {
 	display: flex;
 	flex-direction: column;
@@ -64,4 +68,25 @@ button {
 
 label {
 	font-weight: 800;
+}
+
+@media screen and (min-width: 1100px) {
+	.container {
+		margin: 0;
+	}
+
+	.img-container {
+		display: block;
+	}
+
+	img {
+		width: 400px;
+		object-fit: cover;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	img {
+		width: auto;
+	}
 }

@@ -1,0 +1,109 @@
+<ng-template #noRooms>
+	<section class="no-rooms">
+		<h1>There are no registered rooms</h1>
+	</section>
+</ng-template>
+
+<section class="container" *ngIf="rooms.length > 0; else noRooms">
+	<h1>All Rooms</h1>
+	<mat-form-field class="filter">
+		<mat-label>Filter Table</mat-label>
+		<input matInput (keyup)="applyFilter($event)" placeholder="Search" #input />
+	</mat-form-field>
+
+	<div class="mat-elevation-z8 table">
+		<table mat-table [dataSource]="dataSource" matSort>
+			<ng-container matColumnDef="id">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Room ID</th>
+				<td mat-cell *matCellDef="let row">{{ row.id }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="name">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+				<td mat-cell *matCellDef="let row">{{ row.name }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="available">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Available</th>
+				<td mat-cell *matCellDef="let row">{{ row.available }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="capacity">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Capacity</th>
+				<td mat-cell *matCellDef="let row">{{ row.capacity }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="type">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+				<td mat-cell *matCellDef="let row">{{ row.type }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="imgUrl">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Image URL</th>
+				<td mat-cell *matCellDef="let row">{{ row.imgUrl }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="initialPrice">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Initial Price</th>
+				<td mat-cell *matCellDef="let row">{{ row.initialPrice | currency: 'USD' }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="taxesAndFees">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Taxes and fees</th>
+				<td mat-cell *matCellDef="let row">{{ row.taxesAndFees | currency: 'USD' }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="totalPrice">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Total Price</th>
+				<td mat-cell *matCellDef="let row">{{ row.totalPrice | currency: 'USD' }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="bathroomAmenities">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Bathroom amenities</th>
+				<td mat-cell *matCellDef="let row">{{ row.bathroomAmenities }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="bedroomAmenities">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Bedroom amenities</th>
+				<td mat-cell *matCellDef="let row">{{ row.bedroomAmenities }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="entertainmentAmenities">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Entertainment amenities</th>
+				<td mat-cell *matCellDef="let row">{{ row.entertainmentAmenities }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="foodAndDrinksAmenities">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Food and drinks amenities</th>
+				<td mat-cell *matCellDef="let row">{{ row.foodAndDrinksAmenities }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="internetAmenities">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Internet amenities</th>
+				<td mat-cell *matCellDef="let row">{{ row.internetAmenities }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="moreAmenities">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>More amenities</th>
+				<td mat-cell *matCellDef="let row">{{ row.moreAmenities }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="highlights">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Highlights</th>
+				<td mat-cell *matCellDef="let row">{{ row.highlights }}</td>
+			</ng-container>
+
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+			<tr class="mat-row" *matNoDataRow>
+				<td class="mat-cell" colspan="4">No data matching the filter "{{ input.value }}"</td>
+			</tr>
+		</table>
+
+		<mat-paginator
+			[pageSizeOptions]="[5, 10, 25, 100]"
+			aria-label="Select page of reservations"
+		></mat-paginator>
+	</div>
+</section>

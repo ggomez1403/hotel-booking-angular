@@ -25,8 +25,8 @@ h2 {
 }
 
 .rooms {
-	display: grid;
-	grid-template-columns: repeat(3, 350px);
+	display: flex;
+	flex-direction: column;
 	gap: 4rem;
 	margin: 3rem 0 5.5rem;
 }
@@ -38,9 +38,33 @@ h2 {
 	flex-direction: column;
 	padding: 1.3rem;
 	border-radius: 10px;
+	width: 400px;
 }
 
 .single-room p {
 	color: #000;
 	font-size: 1rem;
+}
+
+@media screen and (min-width: 990px) {
+	.rooms {
+		display: grid;
+		grid-template-columns: repeat(2, 430px);
+		justify-content: center;
+		gap: 3rem;
+	}
+
+	.single-room {
+		width: 420px;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.rooms {
+		grid-template-columns: repeat(3, 350px);
+	}
+
+	.single-room {
+		width: 350px;
+	}
 }

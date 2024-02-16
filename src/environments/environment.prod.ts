@@ -1,4 +1,4 @@
 export const environment = {
 	production: true,
-	api: 'http://3.145.16.39:8080/api/v1'
+	api: 'https://hotel-booking-system-railway-production.up.railway.app/api/v1'
 };
